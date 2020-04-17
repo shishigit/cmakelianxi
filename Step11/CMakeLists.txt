@@ -30,17 +30,17 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 add_subdirectory(MathFunctions)
 
 # add the executable
-add_executable(Tutorial tutorial.cxx)
-target_link_libraries(Tutorial PUBLIC MathFunctions)
+add_executable(${PROJECT_NAME} tutorial.cxx)
+target_link_libraries(${PROJECT_NAME} PUBLIC MathFunctions)
 
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
-target_include_directories(Tutorial PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
                            "${PROJECT_BINARY_DIR}"
                            )
 
 # add the install targets
-install(TARGETS Tutorial DESTINATION bin)
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
   DESTINATION include
   )
@@ -49,10 +49,10 @@ install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
 enable_testing()
 
 # does the application run
-add_test(NAME Runs COMMAND Tutorial 25)
+add_test(NAME Runs COMMAND ${PROJECT_NAME} 25)
 
 # does the usage message work?
-add_test(NAME Usage COMMAND Tutorial)
+add_test(NAME Usage COMMAND ${PROJECT_NAME})
 set_tests_properties(Usage
   PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number"
   )
