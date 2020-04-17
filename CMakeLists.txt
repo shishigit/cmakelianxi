@@ -3,5 +3,7 @@ project(cmakelianxi)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_subdirectory(lianxi01)
+#add_subdirectory(lianxi01)
+#add_subdirectory(lianxi02)
+add_subdirectory(lianxi03)
 add_executable(cmakelianxi main.cpp)

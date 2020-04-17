@@ -23,7 +23,6 @@ if (USE_MYMATH)
     # 添加一个动态链接库，这个需要和子级配合
     add_subdirectory(MathFunctions)
     list(APPEND EXTRA_LIBS MathFunctions)
-    list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
 endif ()
 
 # 添加一个执行程序
@@ -37,5 +36,4 @@ target_include_directories(
         ${PROJECT_NAME}
         PUBLIC
         "${PROJECT_BINARY_DIR}"
-        ${EXTRA_INCLUDES}
 )
