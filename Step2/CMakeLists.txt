@@ -16,16 +16,17 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 
 # 动态添加链接选项
 if (USE_MYMATH)
+    # 添加一个动态链接库，这个需要和子级配合
     add_subdirectory(MathFunctions)
     list(APPEND EXTRA_LIBS MathFunctions)
     list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
 endif ()
 
 # 添加一个执行程序
-add_executable(Tutorial tutorial.cxx)
+add_executable(${PROJECT_NAME} tutorial.cxx)
 
 # 添加链接目录
-target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
+target_link_libraries(${PROJECT_NAME} PUBLIC ${EXTRA_LIBS})
 
 # 包含 cmake 处理后的文件夹，使得找到处理后的配置
 target_include_directories(
