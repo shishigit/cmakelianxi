@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # 配置编译选项
-option(USE_MYMATH "Use tutorial provided math implementation" ON)
+option(USE_MYMATH "Use tutorial provided math implementation" off)
 
 
 # cmake 处理的配置文件,详情对比两个文件
