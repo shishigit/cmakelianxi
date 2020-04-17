@@ -6,9 +6,7 @@
 #include "TutorialConfig.h"
 
 // 使用动态编译
-#ifdef USE_MYMATH
 #  include "MathFunctions.h"
-#endif
 
 int main(int argc, char *argv[])
 {
@@ -25,11 +23,7 @@ int main(int argc, char *argv[])
     const double inputValue = std::stod(argv[1]);
 
     // 使用动态编译
-#ifdef USE_MYMATH
     const double outputValue = mysqrt(inputValue);
-#else
-    const double outputValue = sqrt(inputValue);
-#endif
 
     std::cout << "The square root of " << inputValue
               << " is " << outputValue
