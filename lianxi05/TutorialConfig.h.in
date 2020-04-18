@@ -2,3 +2,6 @@
 #define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
 #cmakedefine USE_MYMATH
+// 系统函数检测
+#cmakedefine DINGJI_HAVE_LOG
+#cmakedefine DINGJI_HAVE_EXPX

@@ -7,7 +7,9 @@
 
 // 使用动态编译
 #ifdef USE_MYMATH
+
 #  include "MathFunctions.h"
+
 #endif
 
 int main(int argc, char *argv[])
@@ -21,6 +23,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // 系统函数检测
+#if defined(DINGJI_HAVE_LOG)
+    std::cout << "顶级函数检测：DINGJI_HAVE_LOG" << std::endl;
+#endif
+#if defined(DINGJI_HAVE_EXPX)
+    std::cout << "顶级函数检测：DINGJI_HAVE_EXPX"  << std::endl;
+#endif
     // convert input to double
     const double inputValue = std::stod(argv[1]);
 

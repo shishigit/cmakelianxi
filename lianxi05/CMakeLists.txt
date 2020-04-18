@@ -15,6 +15,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # 配置编译选项， 此选项需要在 TutorialConfig.h.in 中的配置的配合
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 
+# 系统函数检测
+include(CheckSymbolExists)
+set(CMAKE_REQUIRED_LIBRARIES "m")
+check_symbol_exists(log "math.h" DINGJI_HAVE_LOG)
+check_symbol_exists(expx "math.h" DINGJI_HAVE_EXPX)
+
 # cmake 处理的配置文件,详情对比两个文件
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
