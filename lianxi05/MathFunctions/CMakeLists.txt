@@ -13,7 +13,6 @@ endif ()
 # 使得任何使用该库的代码，自动包含该库的头文件
 target_include_directories(MathFunctions
         INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
-        PRIVATE ${CMAKE_BINARY_DIR}
         )
 
 # 安装规则
