@@ -1,6 +1,7 @@
 # 添加一个动态链接库，这个需要和父级配合
 add_library(MathFunctions mysqrt.cxx)
 
+# 系统条件检测
 include(CheckSymbolExists)
 set(CMAKE_REQUIRED_LIBRARIES "m")
 check_symbol_exists(log "math.h" HAVE_LOG)
