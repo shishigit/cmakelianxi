@@ -8,6 +8,7 @@ target_include_directories(MathFunctions
 
 # 检测系统是否有指定的函数
 include(CheckSymbolExists)
+set(CMAKE_REQUIRED_LIBRARIES "m")
 check_symbol_exists(log "math.h" HAVE_LOG)
 check_symbol_exists(exp "math.h" HAVE_EXP)
 if (HAVE_LOG AND HAVE_EXP)
